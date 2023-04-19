@@ -1,0 +1,51 @@
+//-------------PointsAPI-----------------
+All names must be taken from the MySQL tables :
+Counters
+TransCurr
+TransVolt
+
+
+public static bool Add( MySqlConnection conn, 
+						int ID,
+                        string Counter,
+                        string CounterDate,
+                        string TransCurr,
+                        string TransVolt);
+
+Add a point to the connected database
+MySqlConnection conn	- connection to the measuring points database
+int ID					- measuring points database ID
+string Counter			- name of counter
+string CounterDate		- date of counter check
+string TransCurr		- name of current transformer
+string TransVolt		- name of voltage transformer
+
+
+public static List<Point_t> ReadByYear(MySqlConnection conn, int Year, string Compare)
+
+Read points by year
+MySqlConnection conn	- connection to the measuring points database
+int Year				- year of interest
+string Compare			- compare operator string in MySQL format: ">","<","=",etc
+ReadByYear returns list of points that corresponds to the compare with year
+
+
+
+
+
+
+
+Simple project demonstrates operations with PointsAPI. 
+NET.Core 3.1
+
+
+
+
+
+
+
+
+
+
+Enter your own connection parameters in the connection string :
+conn.ConnectionString = "server=localhost; uid=root; pwd=MySQL;"; 
